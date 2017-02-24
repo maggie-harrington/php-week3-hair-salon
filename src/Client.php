@@ -26,5 +26,10 @@
         {
             return $this->stylist_id;
         }
+
+        function setName($new_name)
+        {
+            $this->name = (string) $new_name;
+        }
     }
 ?>

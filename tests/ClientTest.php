@@ -79,6 +79,26 @@
             $this->assertEquals(true, is_numeric($result));
         }
 
+        function test_setName()
+        {
+            // Arrange
+            $stylist_name = "test stylist 1";
+            $stylist_id = null;
+            $test_stylist = new Stylist($stylist_name);
+            $test_stylist->save();
+
+            $client_name = "test client 1";
+            $stylist_id = $test_stylist->getId();
+            $test_client = new Client($client_name, $stylist_id);
+            $new_name = "test client 1 rename";
+
+            // Act
+            $test_client->setName($new_name);
+            $result = $test_client->getName();
+
+            // Assert
+            $this->assertEquals($new_name, $result);
+        }
 
     }
 ?>
