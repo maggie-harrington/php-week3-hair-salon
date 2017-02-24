@@ -46,7 +46,7 @@ Copyright (c) 2017 Maggie Harrington
 
 ## Specifications
 
-0. Create `hair_salon` production database with stylist and client tables and make a copy into `hair_salon_test` for development.
+0. Create `hair_salon` production database with stylists and clients tables and make a copy into `hair_salon_test` for development.
 
 1. Create Stylist class with construct, getters & setters.
 
@@ -83,3 +83,28 @@ Copyright (c) 2017 Maggie Harrington
 11. Add edit and delete buttons to clients page, with a new page for the edit form.
 
 12. Export `hair_salon` and `hair_salon_test` databases to include in project folder.
+
+
+## MySQL Commands Used
+
+/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+CREATE DATABASE hair_salon;
+USE hair_salon;
+SELECT DATABASE();
+CREATE TABLE stylists (id SERIAL PRIMARY KEY, name VARCHAR (255));
+CREATE TABLE clients (id SERIAL PRIMARY KEY, name VARCHAR (255), stylist_id BIGINT);
+DESCRIBE stylists;
++-------+---------------------+------+-----+---------+----------------+
+| Field | Type                | Null | Key | Default | Extra          |
++-------+---------------------+------+-----+---------+----------------+
+| id    | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name  | varchar(255)        | YES  |     | NULL    |                |
++-------+---------------------+------+-----+---------+----------------+
+DESCRIBE clients;
++------------+---------------------+------+-----+---------+----------------+
+| Field      | Type                | Null | Key | Default | Extra          |
++------------+---------------------+------+-----+---------+----------------+
+| id         | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| name       | varchar(255)        | YES  |     | NULL    |                |
+| stylist_id | bigint(20)          | YES  |     | NULL    |                |
++------------+---------------------+------+-----+---------+----------------+
