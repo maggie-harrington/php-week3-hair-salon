@@ -17,7 +17,7 @@
     {
         protected function tearDown()
         {
-          Stylist::deleteAll();
+            Stylist::deleteAll();
         }
 
         function test_getId()
