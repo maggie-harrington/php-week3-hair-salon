@@ -95,14 +95,16 @@ CREATE TABLE stylists (id SERIAL PRIMARY KEY, name VARCHAR (255));
 CREATE TABLE clients (id SERIAL PRIMARY KEY, name VARCHAR (255), stylist_id BIGINT);
 
 DESCRIBE stylists;
+
 | Field | Type                | Null | Key | Default | Extra          |
-|-------+---------------------+------+-----+---------+----------------|
+|-------|---------------------|------|-----|---------|----------------|
 | id    | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
 | name  | varchar(255)        | YES  |     | NULL    |                |
 
 DESCRIBE clients;
+
 | Field      | Type                | Null | Key | Default | Extra          |
-|------------+---------------------+------+-----+---------+----------------|
+|------------|---------------------|------|-----|---------|----------------|
 | id         | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
 | name       | varchar(255)        | YES  |     | NULL    |                |
 | stylist_id | bigint(20)          | YES  |     | NULL    |                |
