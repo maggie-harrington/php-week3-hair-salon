@@ -133,7 +133,21 @@
             $this->assertEquals($test_stylist, $result);
         }
 
+        function testUpdate()
+        {
+            // Arrange
+            $name = "test1";
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
 
+            $new_name = "test1 update";
+
+            // Act
+            $test_stylist->update($new_name);
+
+            // Assert
+            $this->assertEquals("test1 update", $test_stylist->getName());
+        }
 
     }
 ?>
