@@ -114,7 +114,7 @@
 
             // Act
             $test_client->save();
-            // $result = Client::getAll();
+            $result = Client::getAll();
 
             // Assert
             $this->assertEquals($test_client, $result[0]);
@@ -137,7 +137,7 @@
 
 
             // Act
-            // $result = Stylist::getAll();
+            $result = Stylist::getAll();
 
             // Assert
             $this->assertEquals([$test_client, $test_client2], $result);
@@ -160,7 +160,7 @@
 
             // Act
             // Client::deleteAll();
-            // $result = Client::getAll();
+            $result = Client::getAll();
 
             // Assert
             $this->assertEquals([], $result);
