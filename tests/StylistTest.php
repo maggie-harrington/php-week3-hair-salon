@@ -144,9 +144,29 @@
 
             // Act
             $test_stylist->update($new_name);
+            $result = $test_stylist->getName();
 
             // Assert
-            $this->assertEquals("test1 update", $test_stylist->getName());
+            $this->assertEquals("test1 update", $result);
+        }
+
+        function testDelete()
+        {
+            // Arrange
+            $name = "test1";
+            $test_stylist = new Stylist($name);
+            $test_stylist->save();
+
+            $name2 = "test2";
+            $test_stylist2 = new Stylist($name2);
+            $test_stylist2->save();
+
+            // Act
+            $test_stylist->delete();
+            $result = Stylist::getAll();
+
+            // Assert
+            $this->assertEquals([$test_stylist2], $result);
         }
 
     }
