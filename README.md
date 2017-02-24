@@ -88,10 +88,15 @@ Copyright (c) 2017 Maggie Harrington
 ## MySQL Commands Used
 
 /Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot
+
 CREATE DATABASE hair_salon;
+
 USE hair_salon;
+
 SELECT DATABASE();
+
 CREATE TABLE stylists (id SERIAL PRIMARY KEY, name VARCHAR (255));
+
 CREATE TABLE clients (id SERIAL PRIMARY KEY, name VARCHAR (255), stylist_id BIGINT);
 
 DESCRIBE stylists;
