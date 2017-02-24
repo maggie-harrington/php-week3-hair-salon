@@ -43,5 +43,20 @@
             $this->assertEquals($name, $result);
         }
 
+        function test_setName()
+        {
+            // Arrange
+            $name = "test1";
+            $test_stylist = new Stylist($name);
+            $new_name = "test1 rename";
+
+            // Act
+            $test_stylist->setName($new_name);
+            $result = $test_stylist->getName();
+
+            // Assert
+            $this->assertEquals($new_name, $result);
+        }
+
     }
 ?>
