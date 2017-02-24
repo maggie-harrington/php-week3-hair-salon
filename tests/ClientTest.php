@@ -113,7 +113,7 @@
             $test_client = new Client($client_name, $stylist_id);
 
             // Act
-            // $test_client->save();
+            $test_client->save();
             // $result = Client::getAll();
 
             // Assert
