@@ -51,24 +51,24 @@ Copyright (c) 2017 Maggie Harrington
 1. Create Stylist class with construct, create and test getters & setters.
 
 2. Create tests and methods for the following Stylist functions:
-* save
-* getAll
-* deleteAll
-* find - single instance
-* update - single instance
-* delete - single instance
+ save
+    * getAll
+    * deleteAll
+    * find - single instance
+    * update - single instance
+    * delete - single instance
 
 3. Write Silex routes for Stylist in app.php after all tests pass.
 
 4. Create Client class with construct, create and test getters & setters.
 
 5. Create tests and methods for the following Client functions:
-* save
-* getAll
-* deleteAll
-* find - single instance
-* update - single instance
-* delete - single instance
+    * save
+    * getAll
+    * deleteAll
+    * find - single instance
+    * update - single instance
+    * delete - single instance
 
 6. Construct and test a method to return all of a stylist's clients
 
