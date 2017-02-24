@@ -48,7 +48,7 @@ Copyright (c) 2017 Maggie Harrington
 
 0. Create `hair_salon` production database with stylists and clients tables and make a copy into `hair_salon_test` for development.
 
-1. Create Stylist class with construct, getters & setters.
+1. Create Stylist class with construct, create and test getters & setters.
 
 2. Create tests and methods for the following Stylist functions:
 * save
@@ -60,7 +60,7 @@ Copyright (c) 2017 Maggie Harrington
 
 3. Write Silex routes for Stylist in app.php after all tests pass.
 
-4. Create Client class with construct, getters & setters.
+4. Create Client class with construct, create and test getters & setters.
 
 5. Create tests and methods for the following Client functions:
 * save
