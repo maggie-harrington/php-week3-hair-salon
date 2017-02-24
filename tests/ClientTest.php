@@ -40,5 +40,24 @@
             // Assert
             $this->assertEquals($id, $result);
         }
+
+        function test_getName()
+        {
+            // Arrange
+            $stylist_name = "test stylist 1";
+            $test_stylist = new Stylist($stylist_name);
+            $test_stylist->save();
+
+            $client_name = "test client 1";
+            $stylist_id = $test_stylist->getId();
+            $test_client = new Client($client_name, $stylist_id);
+
+            // Act
+            $result = $test_client->getName();
+
+            // Assert
+            $this->assertEquals($client_name, $result);
+        }
+
     }
 ?>
