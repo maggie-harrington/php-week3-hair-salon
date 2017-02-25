@@ -33,7 +33,7 @@
     });
 
     // delete all stylists (will also delete all clients)
-    $app->post("/stylists/delete_all", function() use ($app) {
+    $app->delete("/stylists/delete_all", function() use ($app) {
         Stylist::deleteAll();
         Client::deleteAll();
 

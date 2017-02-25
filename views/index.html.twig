@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+        <title>Hair Salon</title>
+    </head>
+    <body>
+        <div class='container'>
+            <h1>Hair Salon<h1><br>
+            <h3>View and Edit Stylists</h3><br>
+
+            {% if stylists is not empty %}
+                <h4>Click the stylist links to view clients</h4>
+                {% for stylist in stylists %}
+                    <h4><a href='/stylists/{{ stylist.getId }}/view_clients'>{{ stylist.getName }}</a><h4>
+
+                    <form action='/stylists/{{ stylist.getId }}/edit' method='get'>
+                        <button type='submit' class='btn btn-xs btn-info'>Edit</button>
+                    </form>
+
+                    <form action='/stylists/{{ stylist.getId }}/delete' method='post'>
+                        <input name='_method' value='delete' hidden>
+                        <button type='submit' class='btn btn-xs btn-warning'>Delete</button>
+                    </form>
+                    <br>
+                {% endfor %}
+
+                <form action='/stylists/delete_all' method='post'>
+                    <input name='_method' value='delete' hidden>
+                    <button type='submit' class='btn btn-danger'>Delete All Records</button>
+                </form>
+            {% endif %}
+
+            <br><br>
+            <h4>Add a stylist</h4>
+            <form action='/stylists/add' method='post'>
+                <div class='form-group'>
+                    <input required type='text' name='name' class='form-control'
+                        placeholder='Enter name of new stylist'>
+                </div>
+
+                <button type='submit' class='btn btn-primary'>Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
