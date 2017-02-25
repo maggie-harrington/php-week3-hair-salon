@@ -19,7 +19,7 @@
         protected function tearDown()
         {
             Stylist::deleteAll();
-            // Client::deleteAll();
+            Client::deleteAll();
         }
 
         function test_getId()
@@ -131,13 +131,14 @@
             $client_name = "test client 1";
             $stylist_id = $test_stylist->getId();
             $test_client = new Client($client_name, $stylist_id);
+            $test_client->save();
 
             $client2_name = "test client 2";
             $test_client2 = new Client($client2_name, $stylist_id);
-
+            $test_client2->save();
 
             // Act
-            $result = Stylist::getAll();
+            $result = Client::getAll();
 
             // Assert
             $this->assertEquals([$test_client, $test_client2], $result);
@@ -154,12 +155,14 @@
             $client_name = "test client 1";
             $stylist_id = $test_stylist->getId();
             $test_client = new Client($client_name, $stylist_id);
+            $test_stylist->save();
 
             $client2_name = "test client 2";
             $test_client2 = new Client($client2_name, $stylist_id);
+            $test_stylist->save();
 
             // Act
-            // Client::deleteAll();
+            Client::deleteAll();
             $result = Client::getAll();
 
             // Assert
