@@ -11,8 +11,9 @@
                 <h1>Hair Salon<h1>
             </div><br>
 
+            <h3>Clients belonging to {{ stylist.getName }}<h3><br>
+
             {% if clients is not empty %}
-                <h3>Clients belonging to {{ stylist.getName }}<h3><br>
                 {% for client in clients %}
                     <h4>{{ client.getName }}</a><h4>
 
@@ -26,6 +27,12 @@
                     </form>
                     <br>
                 {% endfor %}
+                <br><br>
+
+                <form action='/stylists/{{ stylist.getId }}/delete_all_clients' method='post'>
+                    <input name='_method' value='delete' hidden>
+                    <button type='submit' class='btn btn-danger'>Delete Clients</button>
+                </form>
                 <br><br>
             {% endif %}
 
