@@ -11,7 +11,7 @@
             <h3>View and Edit Stylists</h3><br>
 
             {% if stylists is not empty %}
-                <h4>Click the stylist links to view clients</h4>
+                <h4>Click the stylist links to view clients</h4><br>
                 {% for stylist in stylists %}
                     <h4><a href='/stylists/{{ stylist.getId }}/view_clients'>{{ stylist.getName }}</a><h4>
 
@@ -25,7 +25,8 @@
                     </form>
                     <br>
                 {% endfor %}
-
+                <br><br>
+                
                 <form action='/stylists/delete_all' method='post'>
                     <input name='_method' value='delete' hidden>
                     <button type='submit' class='btn btn-danger'>Delete All Records</button>
@@ -41,7 +42,10 @@
                 </div>
 
                 <button type='submit' class='btn btn-primary'>Submit</button>
-            </form>
+            </form><br><br><br><br>
+
+            <footer>Created by <a href="https://github.com/maggie-harrington">Maggie Harrington</a></footer>
+
         </div>
     </body>
 </html>
