@@ -113,5 +113,13 @@
         return $app['twig']->render('clients.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
     });
 
+    // from clients page, delete all clients of that stylist, re-displays clients page
+    $app->delete("/stylists/{id}/delete_all_clients", function($id) use ($app) {
+        $stylist = Stylist::find($id);
+        $stylist->deleteClientsOfStylist();
+
+        return $app['twig']->render('clients.html.twig', array('stylist' => $stylist, 'clients' => $stylist->getClients()));
+    });
+
     return $app;
 ?>
