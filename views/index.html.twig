@@ -7,7 +7,10 @@
     </head>
     <body>
         <div class='container'>
-            <h1>Hair Salon<h1><br>
+            <div class='jumbotron'>
+                <h1>Hair Salon<h1>
+            </div><br>
+
             <h3>View and Edit Stylists</h3><br>
 
             {% if stylists is not empty %}
@@ -26,7 +29,7 @@
                     <br>
                 {% endfor %}
                 <br><br>
-                
+
                 <form action='/stylists/delete_all' method='post'>
                     <input name='_method' value='delete' hidden>
                     <button type='submit' class='btn btn-danger'>Delete All Records</button>

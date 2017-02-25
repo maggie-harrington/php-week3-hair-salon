@@ -89,7 +89,7 @@
         $stylist_id = $client->getStylistId();
         $stylist = Stylist::find($stylist_id);
 
-        return $app['twig']->render('client_edit.html.twig', array('client' => $client));
+        return $app['twig']->render('client_edit.html.twig', array('stylist' => $stylist, 'client' => $client));
     });
 
     // from client edit page, edits client and returns to clients page

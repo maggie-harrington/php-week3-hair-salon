@@ -7,7 +7,9 @@
     </head>
     <body>
         <div class='container'>
-            <h1>Hair Salon<h1><br>
+            <div class='jumbotron'>
+                <h1>Hair Salon<h1>
+            </div><br>
 
             {% if clients is not empty %}
                 <h3>Clients belonging to {{ stylist.getName }}<h3><br>
@@ -35,8 +37,8 @@
                         placeholder='Enter name of new client'>
                 </div>
 
-                <button type='submit' class='btn btn-primary'>Submit</button><br><br>
-            </form>
+                <button type='submit' class='btn btn-primary'>Submit</button>
+            </form><br><br>
 
             <h4><a href='/'>Home</a></h4><br><br><br><br>
 
